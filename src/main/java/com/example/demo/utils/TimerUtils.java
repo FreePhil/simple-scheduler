@@ -21,7 +21,7 @@ public class TimerUtils {
 
     public static Trigger buildTrigger(Class jobClass, TimerInfo info) {
         SimpleScheduleBuilder builder = SimpleScheduleBuilder.simpleSchedule().withIntervalInMilliseconds(info.getRepeatIntervalMs());
-        SimpleScheduleBuilder scheduledBuilder = null;
+        SimpleScheduleBuilder scheduledBuilder;
         if (info.isRunForever()) {
             scheduledBuilder = builder.repeatForever();
         }
